@@ -1,7 +1,7 @@
 # Custom Template Generator
 
 <div align="center" style="margin: 40px 0;">
-    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/logo.png" alt="Logo" width="128" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/logo.png" alt="Logo" width="150" />
 </div>
 
 <div align="center" style="margin: 20px 0;">
@@ -9,7 +9,7 @@
 </div>
 
 <div align="center" style="margin: 40px 0;">
-    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="演示" width="400" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="Demo" width="400" />
 </div>
 
 [简体中文](README.zh-CN.md) | English
@@ -58,3 +58,28 @@ Avatar/
 3. In the opened settings page, configure the `customTemplateGenerator.templates` setting
 4. Add your templates, each template should have `name` and `files` properties
 
+#### Example
+
+```json
+       "customTemplateGenerator.templates": [
+            {
+                "name": "React Component",
+                "files": [
+                    {
+                        "name": "index.ts",
+                        "content": "export * from './{{componentName}}'",
+                    },
+                    {
+                        "name": "{{componentName}}.tsx",
+                        "content": "export function {{componentName}}() { return <div /> }"
+                    }
+                ]
+        }]
+```
+
+### Creating Structure
+
+1. Right-click in the folder to open the context menu
+2. Click `Create Custom Structure`
+3. In the opened settings page, select the template you want
+4. Enter the component name and press `Enter` to confirm

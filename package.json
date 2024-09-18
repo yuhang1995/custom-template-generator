@@ -24,13 +24,13 @@
       "commands": [
         {
           "command": "customTemplateGenerator.createStructure",
-          "title": "创建自定义结构",
-          "category": "自定义模板生成器"
+          "title": "Create Custom Structure",
+          "category": "Custom Template Generator"
         },
         {
           "command": "customTemplateGenerator.configureTemplates",
-          "title": "配置自定义模板",
-          "category": "自定义模板生成器"
+          "title": "Configure Custom Templates",
+          "category": "Custom Template Generator"
         }
       ],
       "configuration": {
