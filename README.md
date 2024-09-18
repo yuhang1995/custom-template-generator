@@ -1,14 +1,16 @@
 # Custom Template Generator
 
-<div align="center" style="margin: 40px 0;">
+<div align="center">
     <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/logo.png" alt="Logo" width="150" />
 </div>
 
-<div align="center" style="margin: 20px 0;">
+<div align="center">
     <strong>Welcome to the Custom Template Generator! This extension helps you quickly create and manage file structures in your projects, enhancing your development efficiency.</strong>
 </div>
 
-<div align="center" style="margin: 40px 0;">
+<br>
+
+<div align="center">
     <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="Demo" width="400" />
 </div>
 
@@ -51,7 +53,7 @@ Avatar/
 
 ## Usage
 
-### Configuring Templates
+### 1. Configuring Templates
 
 1. Open the command palette (Ctrl+Shift+P or Cmd+Shift+P)
 2. Type "Configure Custom Templates" and select the command
@@ -61,23 +63,24 @@ Avatar/
 #### Example
 
 ```json
-       "customTemplateGenerator.templates": [
+"customTemplateGenerator.templates": [
+    {
+        "name": "React Component",
+        "files": [
             {
-                "name": "React Component",
-                "files": [
-                    {
-                        "name": "index.ts",
-                        "content": "export * from './{{componentName}}'",
-                    },
-                    {
-                        "name": "{{componentName}}.tsx",
-                        "content": "export function {{componentName}}() { return <div /> }"
-                    }
-                ]
-        }]
+                "name": "index.ts",
+                "content": "export * from './{{componentName}}'",
+            },
+            {
+                "name": "{{componentName}}.tsx",
+                "content": "export function {{componentName}}() { return <div /> }"
+            }
+        ]
+    }
+]
 ```
 
-### Creating Structure
+### 2. Creating Structure
 
 1. Right-click in the folder to open the context menu
 2. Click `Create Custom Structure`

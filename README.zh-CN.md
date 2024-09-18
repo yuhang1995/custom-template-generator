@@ -1,14 +1,16 @@
 # 自定义模板生成器
 
-<div align="center" style="margin: 40px 0;">
+<div align="center">
     <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/logo.png" alt="Logo" width="150" />
 </div>
 
-<div align="center" style="margin: 20px 0;">
+<div align="center">
     <strong>欢迎使用 Custom Template Generator！这个插件旨在帮助您快速创建和管理项目中的文件结构，提升开发效率。</strong>
 </div>
 
-<div align="center" style="margin: 40px 0;">
+<br>
+
+<div align="center">
     <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="演示" width="400" />
 </div>
 
@@ -30,11 +32,11 @@
 
 结构如下所示：
 
-    ```
-        Avatar/
-        ├── index.ts
-        └── Avatar.tsx
-    ```
+```
+  Avatar/
+  ├── index.ts
+  └── Avatar.tsx
+```
 
 为每个新组件手动创建这种结构可能会很耗时。这个扩展允许您为这种结构创建一个模板，并通过几次点击就能生成它，从而节省宝贵的开发时间。
 
@@ -63,20 +65,21 @@
 #### 示例
 
 ```json
-       "customTemplateGenerator.templates": [
+"customTemplateGenerator.templates": [
+    {
+        "name": "React Component",
+        "files": [
             {
-                "name": "React Component",
-                "files": [
-                    {
-                        "name": "index.ts",
-                        "content": "export * from './{{componentName}}'",
-                    },
-                    {
-                        "name": "{{componentName}}.tsx",
-                        "content": "export function {{componentName}}() { return <div /> }"
-                    }
-                ]
-        }]
+                "name": "index.ts",
+                "content": "export * from './{{componentName}}'",
+            },
+            {
+                "name": "{{componentName}}.tsx",
+                "content": "export function {{componentName}}() { return <div /> }"
+            }
+        ]
+    }
+]
 ```
 
 ### 2、创建结构
