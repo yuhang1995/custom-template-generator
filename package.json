@@ -1,0 +1,109 @@
+{
+    "name": "custom-template-generator",
+    "displayName": "custom-template-generator",
+    "description": "生成自定义文件和文件夹结构的 VS Code 扩展",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.93.0"
+    },
+    "vsce": {
+     "skipReadmeValidation": true
+   },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.configureCustomTemplates",
+        "onLanguage:javascript",
+        "onLanguage:typescript"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "customTemplateGenerator.createStructure",
+          "title": "创建自定义结构",
+          "category": "自定义模板生成器"
+        },
+        {
+          "command": "customTemplateGenerator.configureTemplates",
+          "title": "配置自定义模板",
+          "category": "自定义模板生成器"
+        }
+      ],
+      "configuration": {
+        "title": "Custom Template Generator",
+        "properties": {
+          "customTemplateGenerator.templates": {
+            "type": "array",
+            "default": [],
+            "description": "自定义模板配置。每个模板应包含 name 和 files 属性。",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "模板名称"
+                },
+                "files": {
+                  "type": "array",
+                  "description": "模板文件列表",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "文件名，可以使用 {{componentName}} 作为占位符"
+                      },
+                      "content": {
+                        "type": "string",
+                        "description": "文件内容，可以使用 {{componentName}} 作为占位符"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "menus": {
+        "explorer/context": [
+          {
+            "command": "customTemplateGenerator.createStructure",
+            "group": "customTemplateGenerator@1",
+            "when": "explorerResourceIsFolder"
+          }
+        ]
+      }
+    },
+    "scripts": {
+        "vscode:prepublish": "pnpm run package",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.93.0",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "18.x",
+        "@typescript-eslint/eslint-plugin": "^6.13.1",
+        "@typescript-eslint/parser": "^6.13.1",
+        "eslint": "^8.54.0",
+        "typescript": "^5.3.2",
+        "ts-loader": "^9.5.1",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "@vscode/test-cli": "^0.0.4",
+        "@vscode/test-electron": "^2.3.8"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/yuhang1995/custom-template-generator"
+    }
+}
