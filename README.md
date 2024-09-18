@@ -1,7 +1,7 @@
 # Custom Template Generator
 
 <div align="center" style="margin: 40px 0;">
-    <img src="assets/logo.svg" alt="Logo" width="150" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/logo.png" alt="Logo" width="128" />
 </div>
 
 <div align="center" style="margin: 20px 0;">
@@ -9,7 +9,7 @@
 </div>
 
 <div align="center" style="margin: 40px 0;">
-    <img src="assets/demo.gif" alt="演示" width="400" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="演示" width="400" />
 </div>
 
 [简体中文](README.zh-CN.md) | English
