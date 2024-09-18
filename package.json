@@ -3,7 +3,7 @@
     "publisher": "RyanYu",
     "displayName": "custom-template-generator",
     "description": "生成自定义文件和文件夹结构的 VS Code 扩展",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "icon": "assets/logo.png",
     "engines": {
         "vscode": "^1.93.0"
