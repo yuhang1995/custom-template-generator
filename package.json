@@ -2,82 +2,281 @@
     "name": "custom-template-generator",
     "publisher": "RyanYu",
     "displayName": "custom-template-generator",
-    "description": "生成自定义文件和文件夹结构的 VS Code 扩展",
-    "version": "0.0.3",
+    "description": "一个强大的 VS Code 扩展，允许用户快速生成自定义文件和文件夹结构，支持多种前端框架（如 Next.js、React、Vue 和 Angular）的文件模板，提升开发效率。",
+    "version": "0.1.3",
     "icon": "assets/logo.png",
     "engines": {
-        "vscode": "^1.93.0"
+        "vscode": "^1.90.0"
     },
     "vsce": {
-     "skipReadmeValidation": true
-   },
+        "skipReadmeValidation": true
+    },
     "categories": [
+        "Programming Languages",
+        "Snippets",
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.configureCustomTemplates",
         "onLanguage:javascript",
         "onLanguage:typescript"
     ],
     "main": "./dist/extension.js",
     "contributes": {
-      "commands": [
-        {
-          "command": "customTemplateGenerator.createStructure",
-          "title": "Create Custom Structure",
-          "category": "Custom Template Generator"
-        },
-        {
-          "command": "customTemplateGenerator.configureTemplates",
-          "title": "Configure Custom Templates",
-          "category": "Custom Template Generator"
-        }
-      ],
-      "configuration": {
-        "title": "Custom Template Generator",
-        "properties": {
-          "customTemplateGenerator.templates": {
-            "type": "array",
-            "default": [],
-            "description": "自定义模板配置。每个模板应包含 name 和 files 属性。",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string",
-                  "description": "模板名称"
-                },
-                "files": {
-                  "type": "array",
-                  "description": "模板文件列表",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "name": {
-                        "type": "string",
-                        "description": "文件名，可以使用 {{componentName}} 作为占位符"
-                      },
-                      "content": {
-                        "type": "string",
-                        "description": "文件内容，可以使用 {{componentName}} 作为占位符"
-                      }
-                    }
-                  }
-                }
-              }
+        "commands": [
+            {
+                "command": "customTemplateGenerator.createStructure",
+                "title": "Create Custom Structure",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.configureTemplates",
+                "title": "Configure Custom Templates",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.configureNextjsTemplates",
+                "title": "Configure Nextjs Templates",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructure",
+                "title": "App Router",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureSelector",
+                "title": "Custom Structure",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructurePage",
+                "title": "Page",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureLoading",
+                "title": "Loading",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureLayout",
+                "title": "Layout",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureTemplate",
+                "title": "Template",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureError",
+                "title": "Error",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureNotFound",
+                "title": "Not Found",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureMiddleware",
+                "title": "Middleware",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureGlobalError",
+                "title": "Global Error",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureRoute",
+                "title": "Route",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.createNextStructureDefault",
+                "title": "Default",
+                "category": "Custom Template Generator"
             }
-          }
+        ],
+        "submenus": [
+            {
+                "id": "createNextStructure",
+                "label": "Create Next Structure"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "customTemplateGenerator.createStructure",
+                    "group": "2_workspace",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "submenu": "createNextStructure",
+                    "group": "2_workspace",
+                    "when": "explorerResourceIsFolder"
+                }
+            ],
+            "createNextStructure": [
+                {
+                    "command": "customTemplateGenerator.createNextStructure",
+                    "group": "1@1",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureSelector",
+                    "group": "1@2",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructurePage",
+                    "group": "2@1",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureLoading",
+                    "group": "2@2",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureLayout",
+                    "group": "2@3",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureError",
+                    "group": "2@4",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureTemplate",
+                    "group": "2@5",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureNotFound",
+                    "group": "2@6",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureDefault",
+                    "group": "2@7",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureRoute",
+                    "group": "3@1",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureMiddleware",
+                    "group": "3@2",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "customTemplateGenerator.createNextStructureGlobalError",
+                    "group": "3@3",
+                    "when": "explorerResourceIsFolder"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "Custom Template Generator",
+            "properties": {
+                "customTemplateGenerator.nextjsTemplates": {
+                    "type": "object",
+                    "default": {},
+                    "description": "Next.js 模板配置，可自定义文件内容。",
+                    "properties": {
+                        "page": {
+                            "type": "string",
+                            "default": "export default function Page() { return <div>Page</div>; }",
+                            "description": "Template for generating Next.js page files."
+                        },
+                        "loading": {
+                            "type": "string",
+                            "description": "Template for generating Next.js layout files."
+                        },
+                        "layout": {
+                            "type": "string",
+                            "description": "Template for generating loading component files."
+                        },
+                        "template": {
+                            "type": "string",
+                            "description": "Template for generating Next.js template files."
+                        },
+                        "default": {
+                            "type": "string",
+                            "description": "Template for generating Next.js default files."
+                        },
+                        "error": {
+                            "type": "string",
+                            "description": "Template for generating error files."
+                        },
+                        "not-found": {
+                            "type": "string",
+                            "description": "Template for generating not-found files."
+                        },
+                        "middleware": {
+                            "type": "string",
+                            "default": "import { NextRequest} from \"next/server\";\n\n// This function can be marked async if using await inside\nexport function middleware(request: NextRequest) {\n  // Middleware logic goes here\n}\n\nexport const config = {\n  matcher: \"\",\n};",
+                            "description": "Template for generating layout files."
+                        },
+                        "global-error": {
+                            "type": "string",
+                            "description": "Template for generating global-error file."
+                        },
+                        "route": {
+                            "type": "string",
+                            "description": "Template for generating route file."
+                        }
+                    }
+                },
+                "customTemplateGenerator.nextjsTemplateExtension": {
+                    "type": "string",
+                    "default": ".tsx",
+                    "enum": [
+                        ".tsx",
+                        ".jsx",
+                        ".js",
+                        ".ts"
+                    ],
+                    "description": "Next.js 模板文件扩展名"
+                },
+                "customTemplateGenerator.templates": {
+                    "type": "array",
+                    "default": [],
+                    "description": "自定义模板配置。每个模板应包含 name 和 files 属性。",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "模板名称"
+                            },
+                            "files": {
+                                "type": "array",
+                                "description": "模板文件列表",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "description": "文件名，可以使用 {{componentName}} 作为占位符"
+                                        },
+                                        "content": {
+                                            "type": "string",
+                                            "description": "文件内容，可以使用 {{componentName}} 作为占位符"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      },
-      "menus": {
-        "explorer/context": [
-          {
-            "command": "customTemplateGenerator.createStructure",
-            "group": "customTemplateGenerator@1",
-            "when": "explorerResourceIsFolder"
-          }
-        ]
-      }
     },
     "scripts": {
         "vscode:prepublish": "pnpm run package",
@@ -91,7 +290,7 @@
         "test": "vscode-test"
     },
     "devDependencies": {
-        "@types/vscode": "^1.93.0",
+        "@types/vscode": "^1.90.0",
         "@types/mocha": "^10.0.6",
         "@types/node": "18.x",
         "@typescript-eslint/eslint-plugin": "^6.13.1",
@@ -105,7 +304,35 @@
         "@vscode/test-electron": "^2.3.8"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/yuhang1995/custom-template-generator"
-    }
+        "type": "git",
+        "url": "https://github.com/yuhang1995/custom-template-generator"
+    },
+    "tags": [
+        "vscode",
+        "extension",
+        "template",
+        "generator",
+        "Next.js",
+        "Next.js App Router",
+        "custom structure",
+        "file structure",
+        "web development",
+        "javascript",
+        "typescript",
+        "snippets",
+        "development tools",
+        "automation",
+        "frontend",
+        "file templates",
+        "project scaffolding",
+        "react",
+        "vue",
+        "angular",
+        "html",
+        "css",
+        "web apps",
+        "React",
+        "React components",
+        "React templates"
+    ]
 }

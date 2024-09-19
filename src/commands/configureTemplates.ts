@@ -1,12 +1,6 @@
 import * as vscode from 'vscode';
 
 export async function configureTemplates() {
-    const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
-    if (!workspaceFolder) {
-        vscode.window.showErrorMessage('请在工作区文件夹中使用此命令');
-        return;
-    }
-
     await vscode.commands.executeCommand('workbench.action.openSettings', 'customTemplateGenerator.templates');
 
     vscode.window.showInformationMessage(

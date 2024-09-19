@@ -4,14 +4,10 @@ import * as path from 'path';
 import { log } from '../utils/logger';
 import { Template } from '../types';
 
-export async function createStructure(uri: vscode.Uri) {
+export async function createCustomStructure(uri: vscode.Uri) {
     if (!uri) {
-        if (vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 0) {
-            uri = vscode.workspace.workspaceFolders[0].uri;
-        } else {
             vscode.window.showErrorMessage('没有打开的工作区');
             return;
-        }
     }
 
     const workspaceFolder = vscode.workspace.getWorkspaceFolder(uri);
