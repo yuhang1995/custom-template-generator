@@ -11,7 +11,7 @@
 <br>
 
 <div align="center">
-    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="演示" width="400" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="演示" width="100%" />
 </div>
 
 简体中文 | [English](README.md)
@@ -75,7 +75,7 @@
 #### 1、使用演示
 
 <div align="center">
-    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/nextjs-demo.svg" alt="Logo" width="150" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/nextjs-demo.gif" alt="Logo" width="100%" />
 </div>
 
 <br>
@@ -103,6 +103,7 @@
 3. 搜索 "custom-template-generator"
 4. 点击 "安装" 按钮
 
+> 提示：如果想用样板代码作为模板，可以选中文件，右键点击，选择`Copy Formatted Code`，然后粘贴到设置中。
 
 ### 二、使用自定义模板
 
@@ -139,3 +140,5 @@
 2. 点击 `Create Custom Structure`
 3. 选择您想要的模板
 4. 输入组件名称，然后按 `Enter` 确认
+
+> 提示：如果想用样板代码作为模板，可以选中文件，右键点击，选择`Copy Formatted Code`，然后粘贴到设置中。

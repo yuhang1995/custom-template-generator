@@ -3,6 +3,7 @@ import { log } from "./utils/logger";
 import { createCustomStructure } from "./commands/createCustomStructure";
 import { configureTemplates } from "./commands/configureTemplates";
 import * as nextjsStructure from "./commands/createNextStructure";
+import { copyFormattedCodeCommand } from "./commands/copyFormattedCode";
 
 export function activate(context: vscode.ExtensionContext) {
     log("自定义模板生成器已激活");
@@ -25,6 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(
         createStructureCommand,
+        copyFormattedCodeCommand,
         configureTemplatesCommand,
         openNextjsTemplateConfigCommand,
         ...Object.values(nextjsStructure)

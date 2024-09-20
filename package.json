@@ -3,7 +3,7 @@
     "publisher": "RyanYu",
     "displayName": "custom-template-generator",
     "description": "一个强大的 VS Code 扩展，允许用户快速生成自定义文件和文件夹结构，支持多种前端框架（如 Next.js、React、Vue 和 Angular）的文件模板，提升开发效率。",
-    "version": "0.1.5",
+    "version": "0.2.0",
     "icon": "assets/logo.png",
     "engines": {
         "vscode": "^1.90.0"
@@ -24,8 +24,13 @@
     "contributes": {
         "commands": [
             {
-                "command": "customTemplateGenerator.createStructure",
+                "command": "customTemplateGenerator.createCustomStructure",
                 "title": "Create Custom Structure",
+                "category": "Custom Template Generator"
+            },
+            {
+                "command": "customTemplateGenerator.copyFormattedCode",
+                "title": "Copy Formatted Code",
                 "category": "Custom Template Generator"
             },
             {
@@ -106,9 +111,16 @@
             }
         ],
         "menus": {
+            "editor/context": [
+                {
+                    "command": "customTemplateGenerator.copyFormattedCode",
+                    "group": "1_modification", 
+                    "when": "editorHasSelection"
+                }
+            ],
             "explorer/context": [
                 {
-                    "command": "customTemplateGenerator.createStructure",
+                    "command": "customTemplateGenerator.createCustomStructure",
                     "group": "2_workspace",
                     "when": "explorerResourceIsFolder"
                 },

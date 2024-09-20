@@ -111,6 +111,8 @@ Manually creating this structure for each new component can be time-consuming. T
 3. In the opened settings page, configure the `customTemplateGenerator.templates` setting
 4. Add your templates, each template should have `name` and `files` properties
 
+> Note: If you want to use a sample code as a template, you can select the file, right-click, choose `Copy Formatted Code`, and paste it into the settings.
+
 ##### Example
 
 ```json
@@ -137,3 +139,5 @@ Manually creating this structure for each new component can be time-consuming. T
 2. Click `Create Custom Structure`
 3. In the opened settings page, select the template you want
 4. Enter the component name and press `Enter` to confirm
+
+> Note: If you want to use a sample code as a template, you can select the file, right-click, choose `Copy Formatted Code`, and paste it into the settings.
