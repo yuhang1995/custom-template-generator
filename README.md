@@ -11,7 +11,7 @@
 <br>
 
 <div align="center">
-    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="Demo" width="400" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/demo.gif" alt="Demo" width="100%" />
 </div>
 
 [简体中文](README.zh-CN.md) | English
@@ -75,7 +75,7 @@ Manually creating this structure for each new component can be time-consuming. T
 #### 1. Demo
 
 <div align="center">
-    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/nextjs-demo.gif" alt="Logo" width="150" />
+    <img src="https://github.com/yuhang1995/custom-template-generator/raw/HEAD/assets/nextjs-demo.gif" alt="Logo" width="100%" />
 </div>
 
 <br>
